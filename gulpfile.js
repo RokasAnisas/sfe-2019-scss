@@ -26,7 +26,9 @@ function css() {
 function html() {
     return src(`${SRC_DIR}/home/index.html`)
         .pipe(fileInclude({prefix: '@@'}))
-        .pipe(dest(DIST_DIR))
+        .pipe(dest(DIST_DIR)),
+        src(`${SRC_DIR}/LESSONS/**/*.html`)
+            .pipe(dest(`${DIST_DIR}/LESSONS/`))
 }
 
 function js() {
@@ -35,6 +37,11 @@ function js() {
         .pipe(concat('scripts.min.js'))
         .pipe(uglify())
         .pipe(dest(DIST_DIR))
+}
+
+function copyLessons() {
+    return src(`${SRC_DIR}/LESSONS/**/*.html`)
+        .pipe(dest(`${DIST_DIR}/LESSONS/`))
 }
 
 function serve() {
@@ -54,6 +61,7 @@ exports.clean = clean;
 exports.serve = serve;
 exports.html = html;
 exports.js = js;
+exports.copyLessons = copyLessons;
 
 const build = parallel(html, css, js);
 
