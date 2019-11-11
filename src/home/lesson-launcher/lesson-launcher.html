@@ -1,0 +1,18 @@
+<div class="app-lesson-launcher">
+    @@include('../launcher-button/launcher-button.html', {"type": "@@type","title": "@@title","count":"@@count"})
+
+    <div class="app-lesson-launcher__content" id="lesson-view-@@count">
+        <div class="app-lesson-launcher__content-header">
+            <div class="app-lesson-launcher__content-row">
+                <span class="app-lesson-launcher__content-lesson">@@type @@count:</span>
+                <span class="app-lesson-launcher__content-name">@@title</span>
+            </div>
+            <div class="app-lesson-launcher__content-row">
+                @@include('../simple-button/simple-button.html', {"label": "close", "href":"#/"})
+            </div>
+        </div>
+        <div class="app-lesson-launcher__content-playground -@@template">
+            @@include('../../LESSONS/@@template/@@template.html')
+        </div>
+    </div>
+</div>

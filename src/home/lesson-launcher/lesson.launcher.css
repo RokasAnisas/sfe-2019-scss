@@ -1,0 +1,64 @@
+.app-lesson-launcher {
+    display: flex;
+}
+
+.app-lesson-launcher__content {
+    align-items: center;
+    background-color: var(--color-black);
+    display: flex;
+    height: calc(100vh - var(--header-height));
+    flex-direction: column;
+    left: 0;
+    margin-top: var(--header-height);
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    transition: opacity 0.3s ease;
+    z-index: 99999;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.app-lesson-launcher__content.-closed {
+    opacity: 0;
+    transform: translateX(-100%);
+}
+
+.app-lesson-launcher__content-header {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.app-lesson-launcher__content-row {
+    margin-bottom: 40px;
+}
+
+.app-lesson-launcher__content-lesson {
+    display: inline-block;
+    font-size: 20px;
+    line-height: 1;
+    margin-right: 10px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.app-lesson-launcher__content-name {
+    display: inline-block;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 1;
+}
+
+.app-lesson-launcher__content-playground {
+    align-items: center;
+    background-color: var(--color-darker);
+    display: flex;
+    height: 80%;
+    justify-content: center;
+    min-height: 400px;
+    min-width: 600px;
+    overflow: hidden;
+    width: 100%;
+    width: 80%;
+}

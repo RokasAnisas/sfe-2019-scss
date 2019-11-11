@@ -1,0 +1,19 @@
+.wizard {
+    display: block;
+}
+
+.wizard__outline {
+    fill: #010101;
+}
+
+.wizard__clothes {
+    fill: #9d9ea1;
+}
+
+.wizard__skin {
+    fill: #fff;
+}
+
+.wizard__power {
+    fill: #ef5798;
+}
