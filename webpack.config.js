@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const template = [path.resolve(__dirname, './src/index.hbs')];
 
@@ -27,5 +28,6 @@ module.exports = {
         ...template.map(file => new HtmlWebpackPlugin({
             template: file,
         })),
+        new CleanWebpackPlugin(),
     ]
 }
