@@ -1,13 +1,14 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const HtmlWebpackTagsPlugin = require('html-webpack-tags-plugin');
 
-const template = [path.resolve(__dirname, './src/index.hbs')];
 
 module.exports = {
     mode: 'development',
     entry: [
-        path.resolve(__dirname, './src'),
+        path.resolve(__dirname, './src/index.js'),
+        path.resolve(__dirname, './src/styles/index.scss'),
     ],
     devServer: {
         contentBase: './dist',
@@ -17,6 +18,20 @@ module.exports = {
             {
                 test: /\.hbs$/,
                 loader: require.resolve('handlebars-loader'),
+            },
+            {
+                test: /\.scss$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: 'main.css'
+                        }
+                    },
+                    'extract-loader',
+                    'css-loader',
+                    'sass-loader'
+                ]
             }
         ],
     },
@@ -25,9 +40,12 @@ module.exports = {
         filename: 'bundle.js'
     },
     plugins: [
-        ...template.map(file => new HtmlWebpackPlugin({
-            template: file,
-        })),
+        new HtmlWebpackPlugin({
+            template: path.resolve(__dirname, './src/index.hbs'),
+        }),
+        new HtmlWebpackTagsPlugin({
+            tags: ['main.css'], append: true
+        }),
         new CleanWebpackPlugin(),
     ]
 }
