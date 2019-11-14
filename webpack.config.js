@@ -1,19 +1,31 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
+const template = [path.resolve(__dirname, './src/index.hbs')];
+
 module.exports = {
     mode: 'development',
     entry: [
-        './src/index.js'
+        path.resolve(__dirname, './src'),
     ],
     devServer: {
         contentBase: './dist',
+    },
+    module: {
+        rules: [
+            {
+                test: /\.hbs$/,
+                loader: require.resolve('handlebars-loader'),
+            }
+        ],
     },
     output: {
         path: path.resolve(__dirname, './dist'),
         filename: 'bundle.js'
     },
-    plugins: [new HtmlWebpackPlugin({
-        template: path.resolve(__dirname, './public/index.html')
-    })]
+    plugins: [
+        ...template.map(file => new HtmlWebpackPlugin({
+            template: file,
+        })),
+    ]
 }
