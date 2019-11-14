@@ -1,0 +1,16 @@
+.app-heading {
+    font-size: $font-size-h1;
+    position: relative;
+
+    &::after {
+        margin-bottom: -20px;
+        background-color: $color-contrast;
+        bottom: 0;
+        content: '';
+        display: block;
+        height: 2px;
+        left: 0;
+        position: absolute;
+        width: 100%;
+    }
+}

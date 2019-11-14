@@ -10,9 +10,8 @@ module.exports = {
         path.resolve(__dirname, './src/index.js'),
         path.resolve(__dirname, './src/styles/index.scss'),
     ],
-    devServer: {
-        contentBase: './dist',
-    },
+    devServer: { contentBase: './dist' },
+    devtool: 'source-map',
     module: {
         rules: [
             {
@@ -29,7 +28,12 @@ module.exports = {
                         }
                     },
                     'extract-loader',
-                    'css-loader',
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            sourceMap: false
+                        }
+                    },
                     'sass-loader'
                 ]
             }
