@@ -1,9 +1,13 @@
 .app-lesson-grid {
-    display: grid;
+    display: none;
     gap: $gutter;
     grid-template-columns: 1fr;
     width: 80%;
     justify-items: center;
+
+    &.is-active {
+        display: grid;
+    }
 
     @include if-tablet {
         grid-template-columns: repeat(2, 1fr);
