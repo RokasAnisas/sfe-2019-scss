@@ -1,7 +1,6 @@
 const lessonLauncher = () => {
     const lessonGrid = document.getElementById('app-lesson-grid');
     const lessonView = document.getElementById('app-lesson-view');
-    const lessonViewFrame = document.getElementById('app-lesson-view__frame');
 
     window.onhashchange = function () {
         watchHashChange()
@@ -10,11 +9,12 @@ const lessonLauncher = () => {
     const watchHashChange = () => {
         const currentLesson = location.hash.replace('#/lessons/', "")
         const isLessonView = location.hash.includes('/lessons/')
-
-        lessonViewFrame.src = currentLesson + '.html'
+        const allLessonViews = document.getElementsByClassName('app-lesson')
+        const activeLesson = document.getElementById(currentLesson)
 
         if (isLessonView) {
             GridViewToggle('view')
+            setActiveLesson(currentLesson)
         } else {
             GridViewToggle('grid')
         }
@@ -29,6 +29,16 @@ const lessonLauncher = () => {
             lessonGrid.classList.remove('is-active')
             lessonView.classList.add('is-active')
         }
+    }
+
+    const setActiveLesson = (currentLesson) => {
+        const allLessonViews = document.getElementsByClassName('app-lesson-view__lesson')
+        const activeLesson = document.getElementById(currentLesson)
+
+        Array.prototype.forEach.call(allLessonViews, function (lessonView) {
+            lessonView.classList.remove('is-active')
+            activeLesson.classList.add('is-active')
+        });
     }
 
     watchHashChange()
