@@ -28,7 +28,7 @@ module.exports = {
                     {
                         loader: 'file-loader',
                         options: {
-                            name: 'main.css'
+                            name: 'styles/[name].css',
                         }
                     },
                     'extract-loader',
@@ -45,7 +45,7 @@ module.exports = {
     },
     output: {
         path: path.resolve(__dirname, './dist'),
-        filename: 'bundle.js'
+        filename: '[name].js'
     },
     plugins: [
         ...Lessons.map((file) => new HtmlWebpackPlugin({
@@ -56,7 +56,7 @@ module.exports = {
             template: path.resolve(__dirname, './src/index.hbs'),
         }),
         new HtmlWebpackTagsPlugin({
-            tags: ['main.css'], append: true
+            tags: ['styles/index.css'], append: true
         }),
         new CleanWebpackPlugin(),
     ]
