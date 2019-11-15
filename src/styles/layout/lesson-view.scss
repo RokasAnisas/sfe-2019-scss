@@ -1,10 +1,16 @@
 .app-lesson-view {
     display: none;
-    background-color: red;
     height: 100%;
     width: 100%;
+    padding: 20px;
 
     &.is-active {
         display: flex;
+        flex-direction: column;
     }
+}
+
+#app-lesson-view__frame {
+    height: 100%;
+    width: 100%;
 }

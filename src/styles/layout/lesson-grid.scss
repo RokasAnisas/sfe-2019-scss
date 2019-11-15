@@ -1,4 +1,5 @@
 .app-lesson-grid {
+    align-self: start;
     display: none;
     gap: $gutter;
     grid-template-columns: 1fr;

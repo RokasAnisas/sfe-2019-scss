@@ -11,7 +11,7 @@
     flex-basis: 30%;
     padding: 40px 60px;
     text-decoration: none;
-    transition: all 0.2s ease;
+    transition: border 0.2s ease;
 
     &:hover {
         border: 1px solid $color-contrast;
@@ -43,7 +43,7 @@
             position: absolute;
             transform-origin: left center;
             transform: scaleX(0);
-            transition: all 0.5s ease;
+            transition: transform 0.5s ease;
             width: 165px;
             z-index: -1;
         }
@@ -53,6 +53,6 @@
         font-size: 22px;
         font-weight: 300;
         line-height: 1;
-        transition: all 0.5s ease;
+        transition: transform 0.5s ease;
     }
 }
