@@ -4,17 +4,8 @@
             {{>../components/heading title="SCSS in depth"}}
         </div>
         <div class="app-main-layout__content">
-            <div class="app-lesson-grid is-active" id="app-lesson-grid">
-                {{>../components/launcher title="Lesson 1" description="SCSS in depth" link="lessons/lesson-1" }}
-                {{>../components/launcher title="Lesson 2" description="SCSS in depth" link="lessons/lesson-2" }}
-                {{>../components/launcher title="Lesson 3" description="SCSS in depth" link="lessons/lesson-3" }}
-                {{>../components/launcher title="Lesson 4" description="SCSS in depth" link="lessons/lesson-1" }}
-                {{>../components/launcher title="Lesson 5" description="SCSS in depth" link="lessons/lesson-1" }}
-            </div>
-            <div class="app-lesson-view" id="app-lesson-view">
-                {{>../components/simple-link href="#/" label="Close" }}
-                <iframe id="app-lesson-view__frame" frameborder="0"></iframe>
-            </div>
+            {{>../components/lesson-grid }}
+            {{>../components/lesson-view }}
         </div>
     </div>
 </main>
