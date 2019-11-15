@@ -1,0 +1,15 @@
+.app-lesson-grid {
+    display: grid;
+    gap: $gutter;
+    grid-template-columns: 1fr;
+    width: 80%;
+    justify-items: center;
+
+    @include if-tablet {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include if-desktop {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

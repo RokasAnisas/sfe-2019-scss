@@ -1,10 +1,16 @@
 <main class="app-home">
-    <div class="lesson-view">
-        <div class="lesson-view__title">
+    <div class="app-lesson-view">
+        <div class="app-lesson-view__title">
             {{>../components/heading title="SCSS in depth"}}
         </div>
-        <div class="lesson-view__content">
-            {{>../components/launcher title="Lesson 1" description="SCSS in depth" }}
+        <div class="app-lesson-view__content">
+            <div class="app-lesson-grid">
+                {{>../components/launcher title="Lesson 1" description="SCSS in depth" }}
+                {{>../components/launcher title="Lesson 2" description="SCSS in depth" }}
+                {{>../components/launcher title="Lesson 3" description="SCSS in depth" }}
+                {{>../components/launcher title="Lesson 4" description="SCSS in depth" }}
+                {{>../components/launcher title="Lesson 5" description="SCSS in depth" }}
+            </div>
         </div>
     </div>
 </main>
