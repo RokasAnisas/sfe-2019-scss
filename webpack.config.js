@@ -13,7 +13,6 @@ module.exports = {
     mode: 'development',
     entry: [
         path.resolve(__dirname, './src/index.js'),
-        path.resolve(__dirname, './src/styles/index.scss'),
     ],
     devServer: { contentBase: './dist' },
     devtool: 'source-map',
