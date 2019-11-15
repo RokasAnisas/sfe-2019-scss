@@ -2,20 +2,19 @@
     display: none;
     flex-direction: column;
     height: 100%;
-    padding: 20px;
     width: 100%;
+    padding: $padding;
 
     &__actions {
         display: flex;
         justify-content: center;
-        margin-bottom: $gutter;
+        margin-bottom: $gutter / 2;
     }
 
     &__content {
         width: 100%;
         height: 100%;
         flex-grow: 1;
-        padding: 20px;
         border-radius: 5px;
         overflow: hidden;
         box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.1);
@@ -29,4 +28,12 @@
 #app-lesson-view__frame {
     height: 100%;
     width: 100%;
+
+    &.-fullscreen {
+        height: 100vh;
+        width: 100vw;
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
 }
