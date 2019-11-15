@@ -1,13 +1,17 @@
 const lessonLauncher = () => {
     const lessonGrid = document.getElementById('app-lesson-grid');
     const lessonView = document.getElementById('app-lesson-view');
+    const lessonViewFrame = document.getElementById('app-lesson-view__frame');
 
     window.onhashchange = function () {
         watchHashChange()
     }
 
     const watchHashChange = () => {
+        const currentLesson = location.hash.replace('#/lessons/', "")
         const isLessonView = location.hash.includes('/lessons/')
+
+        lessonViewFrame.src = currentLesson + '.html'
 
         if (isLessonView) {
             GridViewToggle('view')

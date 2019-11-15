@@ -1,0 +1,14 @@
+.app-simple-link {
+    display: inline-block;
+    color: $color-font;
+    text-decoration: none;
+    padding: 5px;
+    border-radius: 2px;
+    border: 1px solid $color-contrast;
+    transition: color 0.3s ease, background-color 0.3s ease;
+
+    &:hover {
+        color: $color-font-inverse;
+        background-color: $color-contrast;
+    }
+}

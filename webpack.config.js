@@ -3,6 +3,12 @@ const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackTagsPlugin = require('html-webpack-tags-plugin');
 
+const Lessons = [
+    {
+        file: path.resolve(__dirname, './src/LESSONS/lesson-1/lesson-1.html'),
+    },
+]
+const getFileNameAfterProcessing = filePath => filePath.split('/').pop().replace(/\.hbs/, '');
 
 module.exports = {
     mode: 'development',
@@ -44,6 +50,11 @@ module.exports = {
         filename: 'bundle.js'
     },
     plugins: [
+        ...Lessons.map(({ title, file }) => new HtmlWebpackPlugin({
+            template: file,
+            title,
+            filename: getFileNameAfterProcessing(file),
+        })),
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, './src/index.hbs'),
         }),
