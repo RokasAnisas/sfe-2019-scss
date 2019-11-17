@@ -1,26 +1,26 @@
 .app-launcher {
-    color: $color-contrast;
     background-color: transparent;
-    border-radius: 5px;
     border: 1px solid transparent;
+    border-radius: 5px;
+    color: $color-contrast;
     cursor: pointer;
     display: flex;
-    justify-content: center;
+    flex-basis: 30%;
     flex-direction: column;
     flex-grow: 1;
-    flex-basis: 30%;
+    justify-content: center;
     padding: 40px 60px;
     text-decoration: none;
-    transition: border 0.2s ease;
+    transition: border .2s ease;
 
     &:hover {
         border: 1px solid $color-contrast;
 
-        & > .app-launcher__num::after {
+        .app-launcher__num::after {
             transform: scaleX(1);
         }
 
-        & > .app-launcher__name {
+        .app-launcher__name {
             transform: translateX(40px);
         }
     }
@@ -41,9 +41,9 @@
             left: 0;
             margin-bottom: -2px;
             position: absolute;
-            transform-origin: left center;
             transform: scaleX(0);
-            transition: transform 0.5s ease;
+            transform-origin: left center;
+            transition: transform .5s ease;
             width: 165px;
             z-index: -1;
         }
@@ -53,6 +53,6 @@
         font-size: 22px;
         font-weight: 300;
         line-height: 1;
-        transition: transform 0.5s ease;
+        transition: transform .5s ease;
     }
 }

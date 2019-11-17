@@ -3,8 +3,8 @@
     display: none;
     gap: $gutter;
     grid-template-columns: 1fr;
-    width: 80%;
     justify-items: center;
+    width: 80%;
 
     &.is-active {
         display: grid;

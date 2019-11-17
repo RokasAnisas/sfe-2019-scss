@@ -2,6 +2,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackTagsPlugin = require('html-webpack-tags-plugin');
+const StylelintPlugin = require('stylelint-webpack-plugin');
 
 module.exports = {
     mode: 'development',
@@ -49,5 +50,8 @@ module.exports = {
             tags: ['styles/index.css'], append: true
         }),
         new CleanWebpackPlugin(),
+        new StylelintPlugin({
+            configFile: '.stylelintrc.json'
+        }),
     ]
 }
