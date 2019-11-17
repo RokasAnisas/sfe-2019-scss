@@ -50,8 +50,6 @@ module.exports = {
             tags: ['styles/index.css'], append: true
         }),
         new CleanWebpackPlugin(),
-        new StylelintPlugin({
-            configFile: '.stylelintrc.json'
-        }),
+        new StylelintPlugin(),
     ]
 }
