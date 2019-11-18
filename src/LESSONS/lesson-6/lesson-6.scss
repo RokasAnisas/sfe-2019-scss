@@ -1,0 +1,20 @@
+.lesson-6 {
+    @function cta-transition($parameters) {
+        @return null;
+    }
+
+    &__button {
+        background-color: $color-accent-1;
+        border: 0;
+        border-radius: 3px;
+        color: $color-font;
+        cursor: pointer;
+        padding: 10px;
+        transform: scale(1);
+
+        &:hover {
+            background-color: $color-accent-2;
+            transform: scale(1.5);
+        }
+    }
+}
