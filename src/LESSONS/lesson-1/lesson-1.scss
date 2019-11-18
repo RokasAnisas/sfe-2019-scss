@@ -1,5 +1,7 @@
+// Code in here doesn't look very sassy
 .lesson-1__title {
     font-size: 2rem;
+    padding: $padding;
 }
 
 .lesson-1__list {
@@ -10,10 +12,15 @@
 .lesson-1__list-item {
     font-size: 1.2rem;
     line-height: 2;
+    padding: 0 $padding;
+}
 
-    &::before {
-        content: '- ';
-    }
+.lesson-1__list-item::before {
+    content: '- ';
+}
+
+.lesson-1__list-item:hover {
+    background-color: invert($color-accent-1);
 }
 
 .lesson-1__list-item--attention {
