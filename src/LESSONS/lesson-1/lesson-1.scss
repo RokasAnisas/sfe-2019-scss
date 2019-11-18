@@ -1,0 +1,21 @@
+.lesson-1__title {
+    font-size: 2rem;
+}
+
+.lesson-1__list {
+    display: flex;
+    flex-direction: column;
+}
+
+.lesson-1__list-item {
+    font-size: 1.2rem;
+    line-height: 2;
+
+    &::before {
+        content: '- ';
+    }
+}
+
+.lesson-1__list-item--attention {
+    background-color: $color-accent-1;
+}
