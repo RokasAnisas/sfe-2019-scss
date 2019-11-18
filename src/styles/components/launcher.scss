@@ -2,7 +2,7 @@
     background-color: transparent;
     border: 1px solid transparent;
     border-radius: 5px;
-    color: $color-contrast;
+    color: $color-font;
     cursor: pointer;
     display: flex;
     flex-basis: 30%;
@@ -14,7 +14,7 @@
     transition: border .2s ease;
 
     &:hover {
-        border: 1px solid $color-contrast;
+        border: 1px solid $color-font;
 
         .app-launcher__num::after {
             transform: scaleX(1);
