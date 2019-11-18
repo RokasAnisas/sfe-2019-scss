@@ -4,6 +4,7 @@
     gap: $gutter;
     grid-template-columns: 1fr;
     justify-items: center;
+    padding-bottom: $padding * 4;
     width: 80%;
 
     &.is-active {
