@@ -1,0 +1,14 @@
+.lesson-5 {
+    &__button {
+        background-color: $color-accent-1;
+        border: 0;
+        border-radius: 3px;
+        color: $color-font;
+        cursor: pointer;
+        padding: 10px;
+
+        &:hover {
+            background-color: $color-accent-2;
+        }
+    }
+}
