@@ -1,3 +1,4 @@
+// DO NOT USE THIS AS AN EXAMPLE
 const lessonLauncher = () => {
     const lessonGrid = document.getElementById('app-lesson-grid');
     const lessonView = document.getElementById('app-lesson-view');
@@ -9,14 +10,14 @@ const lessonLauncher = () => {
     const watchHashChange = () => {
         const currentLesson = location.hash.replace('#/lessons/', "")
         const isLessonView = location.hash.includes('/lessons/')
-        const allLessonViews = document.getElementsByClassName('app-lesson')
-        const activeLesson = document.getElementById(currentLesson)
 
         if (isLessonView) {
             GridViewToggle('view')
             setActiveLesson(currentLesson)
+            setLessonTitle(currentLesson)
         } else {
             GridViewToggle('grid')
+            setLessonTitle()
         }
     }
 
@@ -39,6 +40,17 @@ const lessonLauncher = () => {
             lessonView.classList.remove('is-active')
             activeLesson.classList.add('is-active')
         });
+    }
+
+    const setLessonTitle = (name) => {
+        const lessonTitleElement = document.getElementById('app-lesson-name')
+        if (name) {
+            lessonTitleElement.innerText = name.replace('-', ' ')
+            lessonTitleElement.classList.add('is-active')
+        } else {
+            lessonTitleElement.innerText = null
+            lessonTitleElement.classList.remove('is-active')
+        }
     }
 
     watchHashChange()
