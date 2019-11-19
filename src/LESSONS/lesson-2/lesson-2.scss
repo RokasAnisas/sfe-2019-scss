@@ -1,10 +1,10 @@
 .lesson-2 {
-    // Uncomment code below, modify it(correct mistakes that were left), make text to decline in size
-    // $map-sizes: ('1': 100px, '2': 50px, '3': 25px, '4': 12.5px, '5': 6.25px);
+    //Uncomment code below, modify it(correct mistakes that were left), make text to decline in size
+    $map-sizes: ('1': 100px, '2': 50px, '3': 25px, '4': 12.5px, '5': 6.25px);
 
-    // @each $, $  in $map-sizes {
-    //     .lesson-2__text-$ {
-    //         font-size: ;
-    //     }
-    // }
+    @each $index, $map-size  in $map-sizes {
+        .lesson-2__text-#{$index} {
+            font-size: $map-size;
+        }
+    }
 }

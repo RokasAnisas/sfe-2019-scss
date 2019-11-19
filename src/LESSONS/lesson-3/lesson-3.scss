@@ -1,9 +1,12 @@
 .lesson-3 {
     // Make a dark mode switch
-    // $_dark-mode: false;
+    $_dark-mode: false;
     $_color-background: #f0ebea;
     $_color-text: #272727;
-    // @if $_dark-mode {}
+    @if $_dark-mode {
+        $_color-background: #272727;
+        $_color-text: #f0ebea;
+    }
 
     background-color: $_color-background;
     color: $_color-text;
