@@ -1,5 +1,11 @@
 .lesson-5 {
+    @mixin transition($attr : color) {
+        transition: $attr .5s ease-in-out;
+    }
+
     &__button {
+        @include transition(background-color);
+
         background-color: $color-accent-1;
         border: 0;
         border-radius: 3px;
