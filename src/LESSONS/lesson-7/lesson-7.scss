@@ -5,4 +5,10 @@
         background-color: $color-accent-1;
         padding: 20px;
     }
+
+    @for $var from 1 to 6 {
+        div:nth-child(#{$var}) {
+            background-color: darken($color-accent-1, $var * 5);
+        }
+    }
 }
