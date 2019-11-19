@@ -1,0 +1,12 @@
+.app-lesson-name {
+    display: inline-block;
+    font-size: $font-size-h2;
+    height: $font-size-h2;
+    margin: $padding;
+    opacity: 0;
+    text-transform: uppercase;
+
+    &.is-active {
+        opacity: 1;
+    }
+}

@@ -1,0 +1,21 @@
+.app-lesson-grid {
+    align-self: start;
+    display: none;
+    gap: $gutter;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    padding-bottom: $padding * 4;
+    width: 80%;
+
+    &.is-active {
+        display: grid;
+    }
+
+    @include if-tablet {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include if-desktop {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
