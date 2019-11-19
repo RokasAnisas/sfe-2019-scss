@@ -9,17 +9,17 @@ $data-svg-prefix: 'data:image/svg+xml;utf-8,';
     @return $string;
 }
 
-@function get-icon( $icon, $color: #fff ) {
-
-    @if 'color' != type-of( $color ) {
-
-        @warn 'The requested color - "' + $color + '" - was not recognized as a Sass color value.';
-        @return null;
-    }
-
-    $icon: map-get($icons, $icon);
+@mixin get-icon($icon-name, $color: #fff) {
+    $icon-svg: map-get($icons, $icon-name);
     $placeholder: '%%COLOR%%';
-    $data-uri: str-replace(url($data-svg-prefix + $icon), $placeholder, $color);
+    $data-uri: str-replace(url($data-svg-prefix + $icon-svg), $placeholder, $color);
 
-    @return str-replace( $data-uri, '#', '%23' );
+    background-image: str-replace($data-uri, '#', '%23');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    content: '';
+    display: inline-block;
+    height: 100%;
+    width: 100%;
 }

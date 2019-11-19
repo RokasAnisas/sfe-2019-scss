@@ -4,18 +4,11 @@
         width: 40px;
 
         &::before {
-            background-image: get-icon('download', $color-accent-1);
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: contain;
-            content: '';
-            display: block;
-            height: 100%;
-            width: 100%;
+            @include get-icon('download', $color-accent-1);
         }
 
         &:hover::before {
-            background-image: get-icon('download', $color-accent-2);
+            @include get-icon('download', $color-accent-2);
         }
     }
 
@@ -24,18 +17,11 @@
         width: 40px;
 
         &::before {
-            background-image: get-icon('external', $color-accent-1);
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: contain;
-            content: '';
-            display: block;
-            height: 100%;
-            width: 100%;
+            @include get-icon('external', $color-accent-1);
         }
 
         &:hover::before {
-            background-image: get-icon('external', $color-accent-2);
+            @include get-icon('external', $color-accent-2);
         }
     }
 }
