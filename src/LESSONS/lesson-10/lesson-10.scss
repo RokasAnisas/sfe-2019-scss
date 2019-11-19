@@ -1,0 +1,41 @@
+.lesson-10 {
+    &__icon {
+        height: 40px;
+        width: 40px;
+
+        &::before {
+            background-image: get-icon('download', $color-accent-1);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            content: '';
+            display: block;
+            height: 100%;
+            width: 100%;
+        }
+
+        &:hover::before {
+            background-image: get-icon('download', $color-accent-2);
+        }
+    }
+
+    &__icon-2 {
+        height: 40px;
+        width: 40px;
+
+        &::before {
+            background-image: get-icon('external', $color-accent-1);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            content: '';
+            display: block;
+            height: 100%;
+            width: 100%;
+        }
+
+        &:hover::before {
+            background-image: get-icon('external', $color-accent-2);
+        }
+    }
+}
