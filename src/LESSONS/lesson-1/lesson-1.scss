@@ -1,22 +1,27 @@
 .lesson-1 {
-    & __title {
+    &__title {
         font-size: 2rem;
         padding: $padding;
     }
+
     &__list {
         display: flex;
         flex-direction: column;
     }
+
     &__list-item {
         font-size: 1.2rem;
         line-height: 2;
         padding: 0 $padding;
+
         &::before {
             content: '- ';
         }
+
         &:hover {
             background-color: invert($color-accent-1);
         }
+
         &--attention {
             background-color: $color-accent-1;
         }
