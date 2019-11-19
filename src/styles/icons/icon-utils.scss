@@ -1,0 +1,23 @@
+@function str-replace( $string, $search, $replace: '' ) {
+    $index: str-index($string, $search);
+    @if $index {
+        @return str-slice( $string, 1, $index - 1 ) + $replace + str-replace( str-slice( $string, $index + str-length( $search ) ), $search, $replace);
+    }
+    @return $string;
+}
+
+@mixin get-icon($icon-name, $color: #fff) {
+    $icon-svg: map-get($icons, $icon-name);
+    $placeholder: '%%COLOR%%';
+    $data-svg-prefix: 'data:image/svg+xml;utf-8,';
+    $data-uri: str-replace(url($data-svg-prefix + $icon-svg), $placeholder, $color);
+
+    background-image: str-replace($data-uri, '#', '%23');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    content: '';
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+}
