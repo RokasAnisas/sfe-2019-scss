@@ -1,3 +1,7 @@
+@mixin transition($property) {
+    transition: $property 1s ease;
+}
+
 .lesson-5 {
     &__button {
         background-color: $color-accent-1;
@@ -6,6 +10,8 @@
         color: $color-font;
         cursor: pointer;
         padding: 10px;
+        transition: background-color .3s ease;
+        @include transition(background-color);
 
         &:hover {
             background-color: $color-accent-2;
