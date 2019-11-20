@@ -1,17 +1,21 @@
 .lesson-10 {
-    // display: block;
+    display: block;
 
-    // &__icon {
-    //     height: 40px;
-    //     width: 40px;
+    &__icon {
+        height: 40px;
+        width: 40px;
 
-    //     &::before { @include get-icon('download', $color-accent-1); }
-    // }
+        &::before { @include get-icon('download', $color-accent-1); }
 
-    // &__icon-2 {
-    //     height: 40px;
-    //     width: 40px;
+        &:hover::before {
+            @include get-icon('download', $color-accent-2);
+        }
+    }
 
-    //     &::before { @include get-icon('caret-right', $color-accent-1); }
-    // }
+    &__icon-2 {
+        height: 40px;
+        width: 40px;
+
+        &::before { @include get-icon('caret-right', $color-accent-1); }
+    }
 }
