@@ -30,7 +30,7 @@ module.exports = {
                     {
                         loader: 'css-loader',
                         options: {
-                            sourceMap: false
+                            sourceMap: true
                         }
                     },
                     'sass-loader'
@@ -50,6 +50,6 @@ module.exports = {
             tags: ['styles/index.css'], append: true
         }),
         new CleanWebpackPlugin(),
-        // new StylelintPlugin(),
+        new StylelintPlugin(),
     ]
 }
