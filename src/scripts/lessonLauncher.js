@@ -1,4 +1,5 @@
 // DO NOT USE THIS AS AN EXAMPLE
+// Oh well, do whatever, I'm just a comment
 const lessonLauncher = () => {
     const lessonGrid = document.getElementById('app-lesson-grid');
     const lessonView = document.getElementById('app-lesson-view');
