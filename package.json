@@ -6,8 +6,8 @@
   "scripts": {
     "build": "webpack",
     "start": "webpack-dev-server --open",
-    "lint:styles": "stylelint \"src/styles/**/*.scss\"",
-    "lintfix:styles": "stylelint \"src/styles/**/*.scss\" --fix"
+    "lint": "stylelint \"src/styles/**/*.scss\"",
+    "lint:fix": "stylelint \"src/styles/**/*.scss\" --fix"
   },
   "repository": {
     "type": "git",
