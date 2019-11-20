@@ -1,6 +1,11 @@
 .lesson-4 {
-    $list-length: x;
+    $list-length: 5;
     $initial-font-size: 100px;
 
-    // @for $i from 1 through $list-length {}
+    @for $i from 1 through $list-length {
+        &__text-#{$i} {
+            font-size: $initial-font-size;
+            $initial-font-size: $initial-font-size / 2;
+        }
+    }
 }
